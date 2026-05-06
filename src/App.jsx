@@ -2,147 +2,146 @@ import "./App.css";
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
 
-const services = [
-  { title: "Website Development", icon: "code" },
-  { title: "App Development", icon: "app" },
-  { title: "Website Hosting", icon: "cloud" },
+const skills = ["Python", "Java", "R", "Machine Learning", "Finance"];
+
+const highlights = [
+  {
+    metric: "82%",
+    label: "Directional accuracy",
+    detail: "Regime-switching research on NATGAS futures signals",
+  },
+  {
+    metric: "29K+",
+    label: "Company records",
+    detail: "Feature engineering and model benchmarking for NUS Data-thon",
+  },
+  {
+    metric: "95%+",
+    label: "Fraud model accuracy",
+    detail: "Logistic regression model for transaction anomaly detection",
+  },
 ];
 
-const skills = ["HTML5", "CSS", "JavaScript", "React", "Node.js", "Git", "GitHub"];
+const experience = [
+  {
+    role: "Data Analyst Intern",
+    org: "Monetary Authority of Singapore",
+    period: "Jan 2026 - Present",
+    summary:
+      "Working across survey analytics, market intelligence, financial data enrichment, and LLM-powered company summaries.",
+  },
+  {
+    role: "Quantitative Research Lead",
+    org: "NUS Investment Society",
+    period: "Aug 2025 - Present",
+    summary:
+      "Leading research on weather-derived features, futures data, and regime-switching models for commodity market direction.",
+  },
+  {
+    role: "Machine Learning Analyst",
+    org: "NUS FinTech Society",
+    period: "Jan 2026 - Present",
+    summary:
+      "Building volatility forecasting and portfolio risk signals with HMM and EGARCH models for dynamic rebalancing.",
+  },
+];
 
 const projects = [
   {
-    title: "Portfolio Website",
-    tags: ["React", "CSS", "Vite"],
+    title: "ML-Powered Smart Portfolio Rebalancer",
+    eyebrow: "Finance ML",
     description:
-      "A personal website that documents my programming journey, highlights practical projects, and gives visitors a clear way to reach me.",
-    visual: "portfolio",
+      "Researched Hidden Markov Model regime detection and EGARCH volatility modelling to produce risk signals for a downstream rebalancing engine.",
+    tags: ["HMM", "EGARCH", "Portfolio Risk"],
   },
   {
-    title: "Movie Titles API",
-    tags: ["JavaScript", "API", "Async"],
+    title: "SCIS: Strategic Company Intelligence System",
+    eyebrow: "Datathon",
     description:
-      "A browser-based API project that searches movie data, renders results dynamically, and keeps the interface responsive while requests load.",
-    visual: "movies",
+      "Built a Streamlit intelligence platform for 8,500+ companies with peer benchmarking, geographic context, and Gemini-generated company summaries.",
+    tags: ["Streamlit", "Gemini AI", "Cosine Similarity"],
   },
   {
-    title: "JavaScript Calculator",
-    tags: ["HTML", "CSS", "JavaScript"],
+    title: "POLARIS Review Inference System",
+    eyebrow: "NLP",
     description:
-      "A clean calculator built to practise state management, input validation, reusable functions, and small interaction details.",
-    visual: "calculator",
+      "Designed an NLP pipeline using Llama 3.2 and pseudo-labeling to classify policy-aligned reviews, improving accuracy by 15% over baseline.",
+    tags: ["Llama 3.2", "Pseudo-labeling", "Classification"],
   },
   {
-    title: "Learning Lab",
-    tags: ["Notes", "Git", "Frontend"],
+    title: "Corporate Structure Classifier",
+    eyebrow: "NUS Data-thon",
     description:
-      "A growing collection of experiments, notes, and mini builds where I test ideas and turn lessons into working interfaces.",
-    visual: "terminal",
+      "Developed an XGBoost multi-class classifier on 29,000+ companies, reaching 77% accuracy, 0.77 F1-score, and 0.91 AUC.",
+    tags: ["XGBoost", "Feature Engineering", "Model Benchmarking"],
   },
 ];
 
-function ServiceIcon({ type }) {
-  if (type === "code") {
-    return (
-      <svg viewBox="0 0 48 48" aria-hidden="true">
-        <path d="M18 17 10 24l8 7M30 17l8 7-8 7M27 13 21 35" />
-        <rect x="5" y="8" width="38" height="30" rx="4" />
-      </svg>
-    );
-  }
-
-  if (type === "app") {
-    return (
-      <svg viewBox="0 0 48 48" aria-hidden="true">
-        <rect x="14" y="5" width="20" height="38" rx="4" />
-        <path d="M20 11h8M22 37h4M18 19h12M18 25h12" />
-      </svg>
-    );
-  }
-
+function SkillBar() {
   return (
-    <svg viewBox="0 0 48 48" aria-hidden="true">
-      <path d="M16 34h19a8 8 0 0 0 1-15 12 12 0 0 0-22-3A9 9 0 0 0 16 34Z" />
-      <path d="M17 25h14M22 20l-5 5 5 5M30 20l5 5-5 5" />
-    </svg>
+    <section className="skill-bar" aria-label="Core skills">
+      {skills.map((skill) => (
+        <span key={skill}>{skill}</span>
+      ))}
+    </section>
   );
 }
 
-function ProjectVisual({ type }) {
+function Highlights() {
   return (
-    <div className={`project-visual project-visual--${type}`} aria-hidden="true">
-      <div className="visual-window">
-        {type === "movies" && (
-          <>
-            <span className="poster poster-dark" />
-            <span className="poster poster-warm" />
-          </>
-        )}
-        {type === "calculator" && (
-          <div className="calc-grid">
-            {["7", "8", "9", "/", "4", "5", "6", "*", "1", "2", "3", "-", "0", ".", "=", "+"].map((key) => (
-              <span key={key}>{key}</span>
-            ))}
-          </div>
-        )}
-        {type === "terminal" && (
-          <div className="terminal-lines">
-            <span>$ npm run build</span>
-            <span>optimizing modules...</span>
-            <span>rendering portfolio...</span>
-            <span>done in 1.4s</span>
-          </div>
-        )}
-        {type === "portfolio" && (
-          <div className="site-preview">
-            <span />
-            <strong>Edwin Lim</strong>
-            <p>Frontend portfolio</p>
-            <i />
-          </div>
-        )}
-      </div>
-    </div>
+    <section className="highlights" aria-label="Selected measurable outcomes">
+      {highlights.map((item) => (
+        <article className="highlight-card" key={item.metric}>
+          <strong>{item.metric}</strong>
+          <h3>{item.label}</h3>
+          <p>{item.detail}</p>
+        </article>
+      ))}
+    </section>
   );
 }
 
 function About() {
   return (
     <section className="section about-section" id="about">
-      <div className="timeline">
-        {services.map((service) => (
-          <div className="service" key={service.title}>
-            <span className="service-dot" />
-            <div className="service-icon">
-              <ServiceIcon type={service.icon} />
-            </div>
-            <h3>{service.title}</h3>
-          </div>
-        ))}
+      <div>
+        <p className="section-label">About</p>
+        <h2>Data science with a finance-first lens.</h2>
       </div>
-
       <div className="about-copy">
-        <p className="section-kicker">About me</p>
-        <h2>Building my way from curiosity to craft.</h2>
         <p>
-          I started this portfolio to document my programming journey as I grow from small
-          experiments into polished frontend projects. I enjoy turning ideas into interfaces,
-          learning by building, and improving the details that make a website feel clear and alive.
+          I am a Data Science & Analytics undergraduate at the National University of
+          Singapore, with a second major in Computer Science. My work sits at the intersection
+          of markets, machine learning, and product-minded analytics.
         </p>
-        <div className="stats">
-          <div>
-            <strong>10<span>+</span></strong>
-            <p>Practice builds</p>
-          </div>
-          <div>
-            <strong>7</strong>
-            <p>Core tools</p>
-          </div>
-          <div>
-            <strong>100<span>%</span></strong>
-            <p>Learning mindset</p>
-          </div>
-        </div>
+        <p>
+          I am especially interested in building systems that help people understand financial
+          data faster: market intelligence tools, risk signals, forecasting workflows, and
+          decision support dashboards that turn raw data into practical insight.
+        </p>
+      </div>
+    </section>
+  );
+}
+
+function Experience() {
+  return (
+    <section className="section" id="experience">
+      <div className="section-heading">
+        <p className="section-label">Experience</p>
+        <h2>Where I am applying the craft.</h2>
+      </div>
+      <div className="experience-list">
+        {experience.map((item) => (
+          <article className="experience-item" key={`${item.role}-${item.org}`}>
+            <span>{item.period}</span>
+            <div>
+              <h3>{item.role}</h3>
+              <p className="org">{item.org}</p>
+              <p>{item.summary}</p>
+            </div>
+          </article>
+        ))}
       </div>
     </section>
   );
@@ -152,33 +151,21 @@ function Projects() {
   return (
     <section className="section projects-section" id="projects">
       <div className="section-heading">
-        <p className="section-kicker">Projects</p>
-        <h2>Selected work</h2>
-        <span />
+        <p className="section-label">Projects</p>
+        <h2>Selected data science work.</h2>
       </div>
-
-      <div className="projects-list">
+      <div className="project-grid">
         {projects.map((project) => (
-          <article className="project" key={project.title}>
-            <div className="project-copy">
-              <h3>{project.title}</h3>
-              <div className="tag-row">
-                {project.tags.map((tag) => (
-                  <span key={tag}>{tag}</span>
-                ))}
-              </div>
-              <p>{project.description}</p>
-              <div className="project-actions">
-                <a className="button button-primary" href="#contact">
-                  View GitHub
-                </a>
-                <a className="text-link" href="#contact">
-                  View project
-                  <span aria-hidden="true">-&gt;</span>
-                </a>
-              </div>
+          <article className="project-card" key={project.title}>
+            <p>{project.eyebrow}</p>
+            <h3>{project.title}</h3>
+            <span className="project-line" />
+            <p>{project.description}</p>
+            <div className="tag-row">
+              {project.tags.map((tag) => (
+                <span key={tag}>{tag}</span>
+              ))}
             </div>
-            <ProjectVisual type={project.visual} />
           </article>
         ))}
       </div>
@@ -189,31 +176,24 @@ function Projects() {
 function Contact() {
   return (
     <section className="contact-section" id="contact">
-      <div className="contact-copy">
-        <p className="section-kicker">Contacts</p>
-        <h2>
-          Have a project?
-          <span>Let's talk.</span>
-        </h2>
+      <div>
+        <p className="section-label">Contact</p>
+        <h2>Let&apos;s talk data, markets, or product ideas.</h2>
       </div>
-
-      <form className="contact-form">
-        <label>
-          <span>Name</span>
-          <input type="text" name="name" />
-        </label>
-        <label>
-          <span>Email</span>
-          <input type="email" name="email" />
-        </label>
-        <label>
-          <span>Message</span>
-          <textarea name="message" rows="4" />
-        </label>
-        <button className="button button-primary" type="submit">
-          Submit
-        </button>
-      </form>
+      <div className="contact-actions">
+        <a className="button button-primary" href="mailto:edwinlim0314@gmail.com">
+          Email me
+        </a>
+        <a className="button button-secondary" href="/edwin_lim_resume.pdf" target="_blank" rel="noreferrer">
+          View resume
+        </a>
+        <a href="https://www.linkedin.com/in/edwin-ljx" target="_blank" rel="noreferrer">
+          LinkedIn
+        </a>
+        <a href="https://github.com/edwin-ljx" target="_blank" rel="noreferrer">
+          GitHub
+        </a>
+      </div>
     </section>
   );
 }
@@ -222,18 +202,7 @@ function Footer() {
   return (
     <footer className="footer">
       <strong>Edwin Lim</strong>
-      <p>Designed and built with React, curiosity, and plenty of iteration.</p>
-      <div className="social-links" aria-label="Social links">
-        <a href="mailto:hello@example.com" aria-label="Email">
-          @
-        </a>
-        <a href="https://github.com/" aria-label="GitHub">
-          GH
-        </a>
-        <a href="https://www.linkedin.com/" aria-label="LinkedIn">
-          in
-        </a>
-      </div>
+      <span>Data Scientist focused on finance, machine learning, and technology.</span>
     </footer>
   );
 }
@@ -244,12 +213,10 @@ function App() {
       <Navbar />
       <main>
         <Hero />
-        <div className="skill-strip" aria-label="Technology stack">
-          {skills.map((skill) => (
-            <span key={skill}>{skill}</span>
-          ))}
-        </div>
+        <SkillBar />
+        <Highlights />
         <About />
+        <Experience />
         <Projects />
         <Contact />
       </main>

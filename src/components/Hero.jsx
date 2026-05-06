@@ -2,33 +2,34 @@ function Hero() {
   return (
     <section className="hero" id="home">
       <div className="hero-copy">
-        <p className="eyebrow">Hello<span>.</span></p>
-        <h1>I'm Edwin Lim</h1>
-        <h2>Frontend Developer</h2>
+        <p className="hero-kicker">Data Scientist</p>
+        <h1>Edwin Lim</h1>
         <p className="hero-summary">
-          I am building a portfolio around my programming journey, from first experiments to
-          polished React projects that solve real problems.
+          I build machine learning and analytics systems for finance and technology, with a
+          focus on market intelligence, portfolio risk signals, and decision-ready data products.
         </p>
         <div className="hero-actions">
-          <a className="button button-primary" href="#contact">
-            Got a project?
+          <a className="button button-primary" href="#projects">
+            View projects
           </a>
-          <a className="button button-secondary" href="#projects">
-            My work
+          <a className="button button-secondary" href="/edwin_lim_resume.pdf" target="_blank" rel="noreferrer">
+            Resume
           </a>
         </div>
       </div>
 
-      <div className="hero-portrait" aria-label="Stylized portrait illustration">
-        <span className="orbit orbit-large" />
-        <span className="orbit orbit-small" />
+      <div className="portrait-stage" aria-label="Profile photo of Edwin Lim">
+        <div className="portrait-orbit portrait-orbit-one" />
+        <div className="portrait-orbit portrait-orbit-two" />
         <div className="portrait-card">
-          <div className="avatar-head" />
-          <div className="avatar-body" />
-          <div className="avatar-laptop">
-            <span />
+          <img src="/profile-picture-2026.png" alt="Edwin Lim" />
+          <div className="portrait-caption">
+            <span>Finance ML</span>
+            <strong>Signals into decisions</strong>
           </div>
         </div>
+        <div className="floating-chip chip-python">Python</div>
+        <div className="floating-chip chip-finance">Finance</div>
       </div>
     </section>
   );

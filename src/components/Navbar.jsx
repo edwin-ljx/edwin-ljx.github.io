@@ -1,6 +1,6 @@
 const links = [
-  { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
+  { label: "Experience", href: "#experience" },
   { label: "Projects", href: "#projects" },
   { label: "Contact", href: "#contact" },
 ];
@@ -8,8 +8,8 @@ const links = [
 function Navbar() {
   return (
     <header className="site-header">
-      <a className="brand" href="#home">
-        Edwin Lim<span>.</span>
+      <a className="brand" href="#home" aria-label="Edwin Lim home">
+        Edwin Lim
       </a>
       <nav className="nav-links" aria-label="Primary navigation">
         {links.map((link) => (
