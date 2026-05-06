@@ -1,29 +1,25 @@
+const links = [
+  { label: "Home", href: "#home" },
+  { label: "About", href: "#about" },
+  { label: "Projects", href: "#projects" },
+  { label: "Contact", href: "#contact" },
+];
+
 function Navbar() {
-    return (
-        <nav style={{
-            display:"flex", 
-            justifyContent:"space-between", 
-            alignItems:"center", 
-            padding:"1.2rem 2rem",
-            borderBottom:"1px solid #2a2a2a"
-            }}>
-            <span style={{
-                fontWeight: "bold",
-                fontSize: "1.1rem"
-            }}>
-                Edwin Lim<span style={{color: "#FF4500"}}>.</span>
-            </span>
-            <ul style={{
-                display:"flex",
-                gap:"3rem",
-                listStyle:"none"
-            }}>
-                <li>About</li>
-                <li>Skills</li>
-                <li>Projects</li>
-                <li>Contact</li>
-            </ul>
-        </nav>
-    )
+  return (
+    <header className="site-header">
+      <a className="brand" href="#home">
+        Edwin Lim<span>.</span>
+      </a>
+      <nav className="nav-links" aria-label="Primary navigation">
+        {links.map((link) => (
+          <a key={link.href} href={link.href}>
+            {link.label}
+          </a>
+        ))}
+      </nav>
+    </header>
+  );
 }
+
 export default Navbar;
