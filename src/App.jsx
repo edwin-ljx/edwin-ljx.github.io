@@ -25,24 +25,31 @@ const highlights = [
 const experience = [
   {
     role: "Data Analyst Intern",
-    org: "Monetary Authority of Singapore",
-    period: "Jan 2026 - Present",
+    org: "TikTok",
+    period: "Sep 2026 - Present",
     summary:
-      "Working across survey analytics, market intelligence, financial data enrichment, and LLM-powered company summaries.",
+      "Building dashboards and KPI reports on external data labeller performance, and running root cause analysis on labelling quality with Trust & Safety teams to support AI development.",
+  },
+  {
+    role: "Data Analyst Intern",
+    org: "Monetary Authority of Singapore",
+    period: "Jan 2026 - Jun 2026",
+    summary:
+      "Worked across survey analytics, market intelligence, financial data enrichment, and LLM-powered company summaries.",
   },
   {
     role: "Quantitative Research Lead",
     org: "NUS Investment Society",
-    period: "Aug 2025 - Present",
+    period: "Aug 2025 - May 2026",
     summary:
-      "Leading research on weather-derived features, futures data, and regime-switching models for commodity market direction.",
+      "Led a 4-person study using forecasted (FourCastNet) vs. realized (ERA5) weather as NATGAS futures signals. Validated forecast skill (MAE 0.58°C, R² 0.94) and built a two-state HMM with regime-specific logistic regression that reached 75.0% test accuracy at the 3-day horizon, a 16.7pp lift over baseline and the best model in the study.",
   },
   {
     role: "Machine Learning Analyst",
     org: "NUS FinTech Society",
-    period: "Jan 2026 - Present",
+    period: "Jan 2026 - May 2026",
     summary:
-      "Building volatility forecasting and portfolio risk signals with HMM and EGARCH models for dynamic rebalancing.",
+      "Primary contributor to the portfolio rebalancer's risk signal layer. Built HMM and EGARCH volatility models tuned to balance sensitivity against false signals, and turned their outputs into actionable thresholds for dynamic asset allocation.",
   },
 ];
 
@@ -51,7 +58,7 @@ const projects = [
     title: "ML-Powered Smart Portfolio Rebalancer",
     eyebrow: "Finance ML",
     description:
-      "Researched Hidden Markov Model regime detection and EGARCH volatility modelling to produce risk signals for a downstream rebalancing engine.",
+      "Built HMM regime detection to identify high- and low-volatility market states and EGARCH models to capture asymmetric volatility clustering. The resulting risk signals set the thresholds that drive dynamic asset allocation in the rebalancing engine.",
     tags: ["HMM", "EGARCH", "Portfolio Risk"],
   },
   {
