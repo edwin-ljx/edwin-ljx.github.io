@@ -118,7 +118,7 @@ function About() {
       <div className="about-copy">
         <p>
           I am a Data Science & Analytics undergraduate at the National University of
-          Singapore, with a second major in Computer Science. My work sits at the intersection
+          Singapore, with a minor in Computer Science. My work sits at the intersection
           of markets, machine learning, and product-minded analytics.
         </p>
         <p>
