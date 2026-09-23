@@ -40,14 +40,14 @@ const experience = [
   {
     role: "Quantitative Research Lead",
     org: "NUS Investment Society",
-    period: "Aug 2025 - Jun 2026",
+    period: "Aug 2025 - May 2026",
     summary:
       "Led a 4-person study using forecasted (FourCastNet) vs. realized (ERA5) weather as NATGAS futures signals. Validated forecast skill (MAE 0.58°C, R² 0.94) and built a two-state HMM with regime-specific logistic regression that reached 75.0% test accuracy at the 3-day horizon, a 16.7pp lift over baseline and the best model in the study.",
   },
   {
     role: "Machine Learning Analyst",
     org: "NUS FinTech Society",
-    period: "Jan 2026 - Jun 2026",
+    period: "Jan 2026 - May 2026",
     summary:
       "Primary contributor to the portfolio rebalancer's risk signal layer. Built HMM and EGARCH volatility models tuned to balance sensitivity against false signals, and turned their outputs into actionable thresholds for dynamic asset allocation.",
   },
